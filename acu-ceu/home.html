@@ -1,0 +1,14 @@
+
+<div ng-show="ctrl.selectedPage(1)">
+<main-navbar></main-navbar>
+<div class="home" ng-repeat="article in ctrl.homepage" >
+    <div class="{{article.textside}} home-article-div">
+        <h3>{{article.title}}</h3>
+        <p>{{article.text}}</p>
+    </div>
+    <div class="home-img-div  {{article.imgside}}">
+        <img class="home-img " ng-src="{{article.image}}">
+    </div>
+   <!-- <hr /> -->
+</div>
+</div>
