@@ -1,0 +1,52 @@
+<section>
+    <ul class="nav nav-pills tab-section">
+        <li ng-class="{active:panel.isSelected(1)}">
+            <a href ng-click="panel.selectTab(1)" class="class-tab">Description</a>
+        </li>
+        <li ng-class="{active:panel.isSelected(2)}">
+            <a href ng-click="panel.selectTab(2)" class="class-tab">Specifications</a>
+        </li>
+        <li ng-class="{active:panel.isSelected(3)}">
+            <a href ng-click="panel.selectTab(3)" class="class-tab">Reviews</a>
+        </li>
+    </ul>
+    <div class="panel" ng-show="panel.isSelected(1)">
+        <h4>Description</h4>
+        <p> {{ceu.description}}</p>
+        <button class="price-buy" ng-show="ceu.canPurchase"> Add to Cart </button>
+
+    </div>
+    <div class="panel" ng-show="panel.isSelected(2)">
+        <h4>Specifications</h4>
+        <p>None yet</p>
+    </div>
+    <div class="panel" ng-show="panel.isSelected(3)">
+        <h4>Reviews</h4>
+        <blockquote class="review-body" ng-repeat="review in ceu.reviews">
+            <b class="review-entry">Stars: {{review.stars}}</b>
+            {{review.body}}
+            <cite class="review-entry">by: {{review.author}}</cite>
+        </blockquote>
+        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
+              ng-submit="reviewForm.$valid && reviewCtrl.addReview(ceu)" novalidate>
+            <blockquote class="review-body">
+                <b class="review-entry">Stars: {{reviewCtrl.review.stars}}</b>
+                {{reviewCtrl.review.body}}
+                <cite class="review-entry">by: {{reviewCtrl.review.author}}</cite>
+            </blockquote>
+
+            <label class="review-body">Stars
+                <select class="review-entry" ng-model="reviewCtrl.review.stars" required>
+                    <option value="1">1 star</option>
+                    <option value="2">2 stars</option>
+                </select>
+            </label>
+            <label class="review-body">Review<textarea class="review-entry" name="body" ng-model="reviewCtrl.review.body" required></textarea></label>
+            <label class="review-body">By:
+                <input class="review-entry" name="author" ng-model="reviewCtrl.review.author" type="email" required /></label>
+            <input class="pull-right review-submit" type="submit" value="submit" />
+
+
+        </form>
+    </div>
+</section >

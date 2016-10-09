@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ceuApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/app.css" rel="stylesheet">
+    <title>CEU</title>
+</head>
+<body ng-controller="ClassController as class">
+    <ul class="list-group class-list">
+        <li class="list-group-item class-listing" ng-repeat="ceu in class.ceus">
+            <h3><ceu-title></ceu-title></h3>
+            <img class="ceu-listing-img" ng-src="{{ceu.images[0].full}}"/>
+            <product-panels></product-panels>
+        </li>
+    </ul>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="javascript/app.js"></script>
+</body>
+</html>

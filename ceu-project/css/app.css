@@ -1,0 +1,57 @@
+.class-list {
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.class-listing {
+    width: 25%;
+}
+
+.ceu-listing-img {
+    width: 100%;
+    max-height: 25vh;
+}
+
+.tab-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    width: 100%
+}
+
+.class-tab {
+    font-size:1em;
+}
+
+.price {
+    /*font-size: 1.75em;*/
+}
+
+.price-buy {
+    margin-top: 5%;
+}
+.ng-invalid.ng-dirty{
+    border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+
+.review-body {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+}
+
+.review-entry {
+    width: 90%;
+    margin: auto;
+}
+
+.review-submit {
+    margin: 1% 5% 0 0;
+}
